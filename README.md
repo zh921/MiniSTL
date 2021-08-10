@@ -1,2 +1,3 @@
-# miniSTL
-mini C++ STL.
+# MiniSTL
+
+Mini C++ STL.
