@@ -23,7 +23,7 @@
 
 int main()
 {
-  using namespace mystl::test;
+  using namespace MiniSTL::test;
 
   std::cout.sync_with_stdio(false);
 

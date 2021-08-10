@@ -1,5 +1,5 @@
 // ============================================================================
-// Copyright (c) 2017 Alinshans. All rights reserved.
+// Copyright (c) 2017 zh921. All rights reserved.
 // Licensed under the MIT License. See LICENSE for details.
 // 
 // Header File : redbud/platform.h
@@ -7,8 +7,8 @@
 // This file contains some preprocessing macros related to the platform.
 // ============================================================================
 
-#ifndef ALINSHANS_REDBUD_PLATFORM_H_
-#define ALINSHANS_REDBUD_PLATFORM_H_
+#ifndef zh921_REDBUD_PLATFORM_H_
+#define zh921_REDBUD_PLATFORM_H_
 
 // ----------------------------------------------------------------------------
 // os
@@ -105,4 +105,4 @@ namespace redbud
 
 }
 
-#endif // !ALINSHANS_REDBUD_PLATFORM_H_
+#endif // !zh921_REDBUD_PLATFORM_H_

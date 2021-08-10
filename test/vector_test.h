@@ -1,14 +1,14 @@
-﻿#ifndef miniSTL_VECTOR_TEST_H_
-#define miniSTL_VECTOR_TEST_H_
+﻿#ifndef MiniSTL_VECTOR_TEST_H_
+#define MiniSTL_VECTOR_TEST_H_
 
 // vector test : 测试 vector 的接口与 push_back 的性能
 
 #include <vector>
 
-#include "../miniSTL/vector.h"
+#include "../MiniSTL/vector.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -21,14 +21,14 @@ void vector_test()
   std::cout << "[----------------- Run container test : vector -----------------]\n";
   std::cout << "[-------------------------- API test ---------------------------]\n";
   int a[] = { 1,2,3,4,5 };
-  mystl::vector<int> v1;
-  mystl::vector<int> v2(10);
-  mystl::vector<int> v3(10, 1);
-  mystl::vector<int> v4(a, a + 5);
-  mystl::vector<int> v5(v2);
-  mystl::vector<int> v6(std::move(v2));
-  mystl::vector<int> v7{ 1,2,3,4,5,6,7,8,9 };
-  mystl::vector<int> v8, v9, v10;
+  MiniSTL::vector<int> v1;
+  MiniSTL::vector<int> v2(10);
+  MiniSTL::vector<int> v3(10, 1);
+  MiniSTL::vector<int> v4(a, a + 5);
+  MiniSTL::vector<int> v5(v2);
+  MiniSTL::vector<int> v6(std::move(v2));
+  MiniSTL::vector<int> v7{ 1,2,3,4,5,6,7,8,9 };
+  MiniSTL::vector<int> v8, v9, v10;
   v8 = v3;
   v9 = std::move(v3);
   v10 = { 1,2,3,4,5,6,7,8,9 };
@@ -109,6 +109,6 @@ void vector_test()
 
 } // namespace vector_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_VECTOR_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_VECTOR_TEST_H_
 

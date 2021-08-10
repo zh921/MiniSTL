@@ -1,21 +1,21 @@
-﻿#ifndef miniSTL_STACK_TEST_H_
-#define miniSTL_STACK_TEST_H_
+﻿#ifndef MiniSTL_STACK_TEST_H_
+#define MiniSTL_STACK_TEST_H_
 
 // stack test : 测试 stack 的接口 和 push 的性能
 
 #include <stack>
 
-#include "../miniSTL/stack.h"
+#include "../MiniSTL/stack.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
 namespace stack_test
 {
 
-void stack_print(mystl::stack<int> s)
+void stack_print(MiniSTL::stack<int> s)
 {
   while (!s.empty())
   {
@@ -45,21 +45,21 @@ void stack_test()
   std::cout << "[----------------- Run container test : stack ------------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   int a[] = { 1,2,3,4,5 };
-  mystl::deque<int> d1(5);
-  mystl::stack<int> s1;
-  mystl::stack<int> s2(5);
-  mystl::stack<int> s3(5, 1);
-  mystl::stack<int> s4(a, a + 5);
-  mystl::stack<int> s5(d1);
-  mystl::stack<int> s6(std::move(d1));
-  mystl::stack<int> s7(s2);
-  mystl::stack<int> s8(std::move(s2));
-  mystl::stack<int> s9;
+  MiniSTL::deque<int> d1(5);
+  MiniSTL::stack<int> s1;
+  MiniSTL::stack<int> s2(5);
+  MiniSTL::stack<int> s3(5, 1);
+  MiniSTL::stack<int> s4(a, a + 5);
+  MiniSTL::stack<int> s5(d1);
+  MiniSTL::stack<int> s6(std::move(d1));
+  MiniSTL::stack<int> s7(s2);
+  MiniSTL::stack<int> s8(std::move(s2));
+  MiniSTL::stack<int> s9;
   s9 = s3;
-  mystl::stack<int> s10;
+  MiniSTL::stack<int> s10;
   s10 = std::move(s3);
-  mystl::stack<int> s11{ 1,2,3,4,5 };
-  mystl::stack<int> s12;
+  MiniSTL::stack<int> s11{ 1,2,3,4,5 };
+  MiniSTL::stack<int> s12;
   s12 = { 1,2,3,4,5 };
 
   STACK_FUN_AFTER(s1, s1.push(1));
@@ -98,6 +98,6 @@ void stack_test()
 
 } // namespace stack_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_STACK_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_STACK_TEST_H_
 

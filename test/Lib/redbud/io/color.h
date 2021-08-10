@@ -1,5 +1,5 @@
 // ============================================================================
-// Copyright (c) 2017 Alinshans. All rights reserved.
+// Copyright (c) 2017 zh921. All rights reserved.
 // Licensed under the MIT License. See LICENSE for details.
 // 
 // Header File : redbud/io/color.h 
@@ -8,8 +8,8 @@
 // refers to a project on github, see https://github.com/agauniyal/rang .
 // ============================================================================
 
-#ifndef ALINSHANS_REDBUD_IO_COLOR_H_
-#define ALINSHANS_REDBUD_IO_COLOR_H_
+#ifndef zh921_REDBUD_IO_COLOR_H_
+#define zh921_REDBUD_IO_COLOR_H_
 
 #include "../platform.h"
 
@@ -348,4 +348,4 @@ operator<<(std::ostream& os, const T& value)
 
 } // namespace io
 } // namespace redbud
-#endif // !ALINSHANS_REDBUD_IO_COLOR_H_
+#endif // !zh921_REDBUD_IO_COLOR_H_

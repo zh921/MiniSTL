@@ -1,14 +1,14 @@
-﻿#ifndef miniSTL_ALGORITHM_PERFORMANCE_TEST_H_
-#define miniSTL_ALGORITHM_PERFORMANCE_TEST_H_
+﻿#ifndef MiniSTL_ALGORITHM_PERFORMANCE_TEST_H_
+#define MiniSTL_ALGORITHM_PERFORMANCE_TEST_H_
 
 // 仅仅针对 sort, binary_search 做了性能测试
 
 #include <algorithm>
 
-#include "../miniSTL/algorithm.h"
+#include "../MiniSTL/algorithm.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -64,10 +64,10 @@ void binary_search_test()
   FUN_TEST2(std, binary_search, LEN1);
   FUN_TEST2(std, binary_search, LEN2);
   FUN_TEST2(std, binary_search, LEN3);
-  std::cout << std::endl << "|        mystl        |";
-  FUN_TEST2(mystl, binary_search, LEN1);
-  FUN_TEST2(mystl, binary_search, LEN2);
-  FUN_TEST2(mystl, binary_search, LEN3);
+  std::cout << std::endl << "|        MiniSTL        |";
+  FUN_TEST2(MiniSTL, binary_search, LEN1);
+  FUN_TEST2(MiniSTL, binary_search, LEN2);
+  FUN_TEST2(MiniSTL, binary_search, LEN3);
   std::cout << std::endl;
 }
 
@@ -80,10 +80,10 @@ void sort_test()
   FUN_TEST1(std, sort, LEN1);
   FUN_TEST1(std, sort, LEN2);
   FUN_TEST1(std, sort, LEN3);
-  std::cout << std::endl << "|        mystl        |";
-  FUN_TEST1(mystl, sort, LEN1);
-  FUN_TEST1(mystl, sort, LEN2);
-  FUN_TEST1(mystl, sort, LEN3);
+  std::cout << std::endl << "|        MiniSTL        |";
+  FUN_TEST1(MiniSTL, sort, LEN1);
+  FUN_TEST1(MiniSTL, sort, LEN2);
+  FUN_TEST1(MiniSTL, sort, LEN3);
   std::cout << std::endl;
 }
 
@@ -103,6 +103,6 @@ void algorithm_performance_test()
 
 } // namespace algorithm_performance_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_ALGORITHM_PERFORMANCE_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_ALGORITHM_PERFORMANCE_TEST_H_
 

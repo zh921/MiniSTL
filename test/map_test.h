@@ -1,15 +1,15 @@
-﻿#ifndef miniSTL_MAP_TEST_H_
-#define miniSTL_MAP_TEST_H_
+﻿#ifndef MiniSTL_MAP_TEST_H_
+#define MiniSTL_MAP_TEST_H_
 
 // map test : 测试 map, multimap 的接口与它们 insert 的性能
 
 #include <map>
 
-#include "../miniSTL/map.h"
-#include "../miniSTL/vector.h"
+#include "../MiniSTL/map.h"
+#include "../MiniSTL/vector.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -17,7 +17,7 @@ namespace map_test
 {
 
 // pair 的宏定义
-#define PAIR    mystl::pair<int, int>
+#define PAIR    MiniSTL::pair<int, int>
 
 // map 的遍历输出
 #define MAP_COUT(m) do { \
@@ -47,21 +47,21 @@ void map_test()
   std::cout << "[===============================================================]" << std::endl;
   std::cout << "[------------------ Run container test : map -------------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
-  mystl::vector<PAIR> v;
+  MiniSTL::vector<PAIR> v;
   for (int i = 0; i < 5; ++i)
     v.push_back(PAIR(i, i));
-  mystl::map<int, int> m1;
-  mystl::map<int, int, mystl::greater<int>> m2;
-  mystl::map<int, int> m3(v.begin(), v.end());
-  mystl::map<int, int> m4(v.begin(), v.end());
-  mystl::map<int, int> m5(m3);
-  mystl::map<int, int> m6(std::move(m3));
-  mystl::map<int, int> m7;
+  MiniSTL::map<int, int> m1;
+  MiniSTL::map<int, int, MiniSTL::greater<int>> m2;
+  MiniSTL::map<int, int> m3(v.begin(), v.end());
+  MiniSTL::map<int, int> m4(v.begin(), v.end());
+  MiniSTL::map<int, int> m5(m3);
+  MiniSTL::map<int, int> m6(std::move(m3));
+  MiniSTL::map<int, int> m7;
   m7 = m4;
-  mystl::map<int, int> m8;
+  MiniSTL::map<int, int> m8;
   m8 = std::move(m4);
-  mystl::map<int, int> m9{ PAIR(1,1),PAIR(3,2),PAIR(2,3) };
-  mystl::map<int, int> m10;
+  MiniSTL::map<int, int> m9{ PAIR(1,1),PAIR(3,2),PAIR(2,3) };
+  MiniSTL::map<int, int> m10;
   m10 = { PAIR(1,1),PAIR(3,2),PAIR(2,3) };
 
   for (int i = 5; i > 0; --i)
@@ -124,21 +124,21 @@ void multimap_test()
   std::cout << "[===============================================================]" << std::endl;
   std::cout << "[---------------- Run container test : multimap ----------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
-  mystl::vector<PAIR> v;
+  MiniSTL::vector<PAIR> v;
   for (int i = 0; i < 5; ++i)
     v.push_back(PAIR(i, i));
-  mystl::multimap<int, int> m1;
-  mystl::multimap<int, int, mystl::greater<int>> m2;
-  mystl::multimap<int, int> m3(v.begin(), v.end());
-  mystl::multimap<int, int> m4(v.begin(), v.end());
-  mystl::multimap<int, int> m5(m3);
-  mystl::multimap<int, int> m6(std::move(m3));
-  mystl::multimap<int, int> m7;
+  MiniSTL::multimap<int, int> m1;
+  MiniSTL::multimap<int, int, MiniSTL::greater<int>> m2;
+  MiniSTL::multimap<int, int> m3(v.begin(), v.end());
+  MiniSTL::multimap<int, int> m4(v.begin(), v.end());
+  MiniSTL::multimap<int, int> m5(m3);
+  MiniSTL::multimap<int, int> m6(std::move(m3));
+  MiniSTL::multimap<int, int> m7;
   m7 = m4;
-  mystl::multimap<int, int> m8;
+  MiniSTL::multimap<int, int> m8;
   m8 = std::move(m4);
-  mystl::multimap<int, int> m9{ PAIR(1,1),PAIR(3,2),PAIR(2,3) };
-  mystl::multimap<int, int> m10;
+  MiniSTL::multimap<int, int> m9{ PAIR(1,1),PAIR(3,2),PAIR(2,3) };
+  MiniSTL::multimap<int, int> m10;
   m10 = { PAIR(1,1),PAIR(3,2),PAIR(2,3) };
 
   for (int i = 5; i > 0; --i)
@@ -152,7 +152,7 @@ void multimap_test()
   MAP_FUN_AFTER(m1, m1.erase(m1.begin(), m1.end()));
   for (int i = 0; i < 5; ++i)
   {
-    MAP_FUN_AFTER(m1, m1.insert(mystl::make_pair(i, i)));
+    MAP_FUN_AFTER(m1, m1.insert(MiniSTL::make_pair(i, i)));
   }
   MAP_FUN_AFTER(m1, m1.insert(v.begin(), v.end()));
   MAP_FUN_AFTER(m1, m1.insert(PAIR(5, 5)));
@@ -197,6 +197,6 @@ void multimap_test()
 
 } // namespace map_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_MAP_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_MAP_TEST_H_
 

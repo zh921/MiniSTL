@@ -1,14 +1,14 @@
-﻿#ifndef miniSTL_STRING_TEST_H_
-#define miniSTL_STRING_TEST_H_
+﻿#ifndef MiniSTL_STRING_TEST_H_
+#define MiniSTL_STRING_TEST_H_
 
 // string test : 测试 string 的接口和 insert 的性能
 
 #include <string>
 
-#include "../miniSTL/astring.h"
+#include "../MiniSTL/astring.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -21,22 +21,22 @@ void string_test()
   std::cout << "[----------------- Run container test : string -----------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   const char* s = "abcdefg";
-  mystl::string str;
-  mystl::string str1(5, 'a');
-  mystl::string str2(str1, 3);
-  mystl::string str3(str1, 0, 3);
-  mystl::string str4("abc");
-  mystl::string str5("abcde",3);
-  mystl::string str6(s, s + 5);
-  mystl::string str7(str1);
-  mystl::string str8(std::move(str1));
-  mystl::string str9;
+  MiniSTL::string str;
+  MiniSTL::string str1(5, 'a');
+  MiniSTL::string str2(str1, 3);
+  MiniSTL::string str3(str1, 0, 3);
+  MiniSTL::string str4("abc");
+  MiniSTL::string str5("abcde",3);
+  MiniSTL::string str6(s, s + 5);
+  MiniSTL::string str7(str1);
+  MiniSTL::string str8(std::move(str1));
+  MiniSTL::string str9;
   str9 = str2;
-  mystl::string str10;
+  MiniSTL::string str10;
   str10 = std::move(str2);
-  mystl::string str11;
+  MiniSTL::string str11;
   str11 = "123";
-  mystl::string str12;
+  MiniSTL::string str12;
   str12 = 'A';
 
   STR_FUN_AFTER(str, str = 'a');
@@ -203,6 +203,6 @@ void string_test()
 
 } // namespace string_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_STRING_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_STRING_TEST_H_
 

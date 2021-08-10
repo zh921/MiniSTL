@@ -1,14 +1,14 @@
-﻿#ifndef miniSTL_LIST_TEST_H_
-#define miniSTL_LIST_TEST_H_
+﻿#ifndef MiniSTL_LIST_TEST_H_
+#define MiniSTL_LIST_TEST_H_
 
 // list test : 测试 list 的接口与 insert, sort 的性能
 
 #include <list>
 
-#include "../miniSTL/list.h"
+#include "../MiniSTL/list.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -24,18 +24,18 @@ void list_test()
   std::cout << "[------------------ Run container test : list ------------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   int a[] = { 1,2,3,4,5 };
-  mystl::list<int> l1;
-  mystl::list<int> l2(5);
-  mystl::list<int> l3(5, 1);
-  mystl::list<int> l4(a, a + 5);
-  mystl::list<int> l5(l2);
-  mystl::list<int> l6(std::move(l2));
-  mystl::list<int> l7{ 1,2,3,4,5,6,7,8,9 };
-  mystl::list<int> l8;
+  MiniSTL::list<int> l1;
+  MiniSTL::list<int> l2(5);
+  MiniSTL::list<int> l3(5, 1);
+  MiniSTL::list<int> l4(a, a + 5);
+  MiniSTL::list<int> l5(l2);
+  MiniSTL::list<int> l6(std::move(l2));
+  MiniSTL::list<int> l7{ 1,2,3,4,5,6,7,8,9 };
+  MiniSTL::list<int> l8;
   l8 = l3;
-  mystl::list<int> l9;
+  MiniSTL::list<int> l9;
   l9 = std::move(l3);
-  mystl::list<int> l10;
+  MiniSTL::list<int> l10;
   l10 = { 1, 2, 2, 3, 5, 6, 7, 8, 9 };
 
   FUN_AFTER(l1, l1.assign(8, 8));
@@ -72,8 +72,8 @@ void list_test()
   FUN_AFTER(l1, l1.unique());
   FUN_AFTER(l1, l1.unique([&](int a, int b) {return b == a + 1; }));
   FUN_AFTER(l1, l1.merge(l7));
-  FUN_AFTER(l1, l1.sort(mystl::greater<int>()));
-  FUN_AFTER(l1, l1.merge(l8, mystl::greater<int>()));
+  FUN_AFTER(l1, l1.sort(MiniSTL::greater<int>()));
+  FUN_AFTER(l1, l1.merge(l8, MiniSTL::greater<int>()));
   FUN_AFTER(l1, l1.reverse());
   FUN_AFTER(l1, l1.clear());
   FUN_AFTER(l1, l1.swap(l9));
@@ -113,6 +113,6 @@ void list_test()
 
 } // namespace list_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_LIST_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_LIST_TEST_H_
 

@@ -1,14 +1,14 @@
-﻿#ifndef miniSTL_DEQUE_TEST_H_
-#define miniSTL_DEQUE_TEST_H_
+﻿#ifndef MiniSTL_DEQUE_TEST_H_
+#define MiniSTL_DEQUE_TEST_H_
 
 // deque test : 测试 deque 的接口和 push_front/push_back 的性能
 
 #include <deque>
 
-#include "../miniSTL/deque.h"
+#include "../MiniSTL/deque.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -21,18 +21,18 @@ void deque_test()
   std::cout << "[----------------- Run container test : deque ------------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   int a[] = { 1,2,3,4,5 };
-  mystl::deque<int> d1;
-  mystl::deque<int> d2(5);
-  mystl::deque<int> d3(5, 1);
-  mystl::deque<int> d4(a, a + 5);
-  mystl::deque<int> d5(d2);
-  mystl::deque<int> d6(std::move(d2));
-  mystl::deque<int> d7;
+  MiniSTL::deque<int> d1;
+  MiniSTL::deque<int> d2(5);
+  MiniSTL::deque<int> d3(5, 1);
+  MiniSTL::deque<int> d4(a, a + 5);
+  MiniSTL::deque<int> d5(d2);
+  MiniSTL::deque<int> d6(std::move(d2));
+  MiniSTL::deque<int> d7;
   d7 = d3;
-  mystl::deque<int> d8;
+  MiniSTL::deque<int> d8;
   d8 = std::move(d3);
-  mystl::deque<int> d9{ 1,2,3,4,5,6,7,8,9 };
-  mystl::deque<int> d10;
+  MiniSTL::deque<int> d9{ 1,2,3,4,5,6,7,8,9 };
+  MiniSTL::deque<int> d10;
   d10 = { 1,2,3,4,5,6,7,8,9 };
 
   FUN_AFTER(d1, d1.assign(5, 1));
@@ -97,6 +97,6 @@ void deque_test()
 
 } // namespace deque_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_DEQUE_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_DEQUE_TEST_H_
 

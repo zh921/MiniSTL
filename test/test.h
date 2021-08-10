@@ -1,5 +1,5 @@
-﻿#ifndef miniSTL_TEST_H_
-#define miniSTL_TEST_H_
+﻿#ifndef MiniSTL_TEST_H_
+#define MiniSTL_TEST_H_
 
 // 一个简单的单元测试框架，定义了两个类 TestCase 和 UnitTest，以及一系列用于测试的宏
 
@@ -14,7 +14,7 @@
 
 #include "Lib/redbud/io/color.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -124,7 +124,7 @@ void UnitTest::Run()
     testcase_name##_TEST
 
 // 使用宏定义掩盖复杂的测试样例封装过程，把 TEXT 中的测试案例放到单元测试中
-#define miniSTL_TEST_(testcase_name)                        \
+#define MiniSTL_TEST_(testcase_name)                        \
 class TESTCASE_NAME(testcase_name) : public TestCase {        \
 public:                                                       \
     TESTCASE_NAME(testcase_name)(const char* case_name)       \
@@ -459,7 +459,7 @@ Example:
 int arr[] = {1,2,3};
 std::vector<int> v1{1, 2, 3};
 std::vector<int> v2{2, 3, 4};
-mystl::vector<long> v3(arr, arr + 3);
+MiniSTL::vector<long> v3(arr, arr + 3);
 EXPECT_CON_NE(v1, v2)   ok
 EXPECT_CON_EQ(arr, v1)  ok
 EXPECT_CON_EQ(v1, v3)   ok
@@ -655,10 +655,10 @@ void test_len(size_t len1, size_t len2, size_t len3, size_t wide)
   FUN_TEST_FORMAT1(std::con, fun, arg, len1);                \
   FUN_TEST_FORMAT1(std::con, fun, arg, len2);                \
   FUN_TEST_FORMAT1(std::con, fun, arg, len3);                \
-  std::cout << "\n|        mystl        |";                  \
-  FUN_TEST_FORMAT1(mystl::con, fun, arg, len1);              \
-  FUN_TEST_FORMAT1(mystl::con, fun, arg, len2);              \
-  FUN_TEST_FORMAT1(mystl::con, fun, arg, len3);    
+  std::cout << "\n|        MiniSTL        |";                  \
+  FUN_TEST_FORMAT1(MiniSTL::con, fun, arg, len1);              \
+  FUN_TEST_FORMAT1(MiniSTL::con, fun, arg, len2);              \
+  FUN_TEST_FORMAT1(MiniSTL::con, fun, arg, len3);    
 
 #define CON_TEST_P2(con, fun, arg1, arg2, len1, len2, len3)  \
   TEST_LEN(len1, len2, len3, WIDE);                          \
@@ -666,10 +666,10 @@ void test_len(size_t len1, size_t len2, size_t len3, size_t wide)
   FUN_TEST_FORMAT2(std::con, fun, arg1, arg2, len1);         \
   FUN_TEST_FORMAT2(std::con, fun, arg1, arg2, len2);         \
   FUN_TEST_FORMAT2(std::con, fun, arg1, arg2, len3);         \
-  std::cout << "\n|        mystl        |";                  \
-  FUN_TEST_FORMAT2(mystl::con, fun, arg1, arg2, len1);       \
-  FUN_TEST_FORMAT2(mystl::con, fun, arg1, arg2, len2);       \
-  FUN_TEST_FORMAT2(mystl::con, fun, arg1, arg2, len3);    
+  std::cout << "\n|        MiniSTL        |";                  \
+  FUN_TEST_FORMAT2(MiniSTL::con, fun, arg1, arg2, len1);       \
+  FUN_TEST_FORMAT2(MiniSTL::con, fun, arg1, arg2, len2);       \
+  FUN_TEST_FORMAT2(MiniSTL::con, fun, arg1, arg2, len3);    
 
 #define MAP_EMPLACE_TEST(con, len1, len2, len3)              \
   TEST_LEN(len1, len2, len3, WIDE);                          \
@@ -677,10 +677,10 @@ void test_len(size_t len1, size_t len2, size_t len3, size_t wide)
   MAP_EMPLACE_DO_TEST(std, con, len1);                       \
   MAP_EMPLACE_DO_TEST(std, con, len2);                       \
   MAP_EMPLACE_DO_TEST(std, con, len3);                       \
-  std::cout << "\n|        mystl        |";                  \
-  MAP_EMPLACE_DO_TEST(mystl, con, len1);                     \
-  MAP_EMPLACE_DO_TEST(mystl, con, len2);                     \
-  MAP_EMPLACE_DO_TEST(mystl, con, len3);
+  std::cout << "\n|        MiniSTL        |";                  \
+  MAP_EMPLACE_DO_TEST(MiniSTL, con, len1);                     \
+  MAP_EMPLACE_DO_TEST(MiniSTL, con, len2);                     \
+  MAP_EMPLACE_DO_TEST(MiniSTL, con, len3);
 
 #define LIST_SORT_TEST(len1, len2, len3)                     \
   TEST_LEN(len1, len2, len3, WIDE);                          \
@@ -688,18 +688,18 @@ void test_len(size_t len1, size_t len2, size_t len3, size_t wide)
   LIST_SORT_DO_TEST(std, len1);                              \
   LIST_SORT_DO_TEST(std, len2);                              \
   LIST_SORT_DO_TEST(std, len3);                              \
-  std::cout << "\n|        mystl        |";                  \
-  LIST_SORT_DO_TEST(mystl, len1);                            \
-  LIST_SORT_DO_TEST(mystl, len2);                            \
-  LIST_SORT_DO_TEST(mystl, len3);
+  std::cout << "\n|        MiniSTL        |";                  \
+  LIST_SORT_DO_TEST(MiniSTL, len1);                            \
+  LIST_SORT_DO_TEST(MiniSTL, len2);                            \
+  LIST_SORT_DO_TEST(MiniSTL, len3);
 
 // 简单测试的宏定义
 #define TEST(testcase_name) \
-  miniSTL_TEST_(testcase_name)
+  MiniSTL_TEST_(testcase_name)
 
 // 运行所有测试案例
 #define RUN_ALL_TESTS() \
-  mystl::test::UnitTest::GetInstance()->Run()
+  MiniSTL::test::UnitTest::GetInstance()->Run()
 
 // 是否开启性能测试
 #ifndef PERFORMANCE_TEST_ON
@@ -712,6 +712,6 @@ void test_len(size_t len1, size_t len2, size_t len3, size_t wide)
 #endif // !LARGER_TEST_DATA_ON
 
 }    // namespace test
-}    // namespace mystl
-#endif // !miniSTL_TEST_H_
+}    // namespace MiniSTL
+#endif // !MiniSTL_TEST_H_
 

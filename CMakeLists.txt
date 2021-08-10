@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(miniSTL)
+project(MiniSTL)
 
 # version
-set(miniSTL_VERSION_MAJOR 0)
-set(miniSTL_VERSION_MINOR 0)
-set(miniSTL_VERSION_PATCH 0)
-set(miniSTL_VERSION "${miniSTL_VERSION_MAJOR}.${miniSTL_VERSION_MINOR}.${miniSTL_VERSION_PATCH}")
-message(STATUS "The version of this project is: ${miniSTL_VERSION}")
+set(MiniSTL_VERSION_MAJOR 0)
+set(MiniSTL_VERSION_MINOR 0)
+set(MiniSTL_VERSION_PATCH 0)
+set(MiniSTL_VERSION "${MiniSTL_VERSION_MAJOR}.${MiniSTL_VERSION_MINOR}.${MiniSTL_VERSION_PATCH}")
+message(STATUS "The version of this project is: ${MiniSTL_VERSION}")
 
 # build type
 set(CMAKE_BUILD_TYPE release)

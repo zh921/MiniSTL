@@ -1,14 +1,14 @@
-﻿#ifndef miniSTL_SET_TEST_H_
-#define miniSTL_SET_TEST_H_
+﻿#ifndef MiniSTL_SET_TEST_H_
+#define MiniSTL_SET_TEST_H_
 
 // set test : 测试 set, multiset 的接口与它们 insert 的性能
 
 #include <set>
 
-#include "../miniSTL/set.h"
+#include "../MiniSTL/set.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -21,18 +21,18 @@ void set_test()
   std::cout << "[------------------ Run container test : set -------------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   int a[] = { 5,4,3,2,1 };
-  mystl::set<int> s1;
-  mystl::set<int, mystl::greater<int>> s2;
-  mystl::set<int> s3(a, a + 5);
-  mystl::set<int> s4(a, a + 5);
-  mystl::set<int> s5(s3);
-  mystl::set<int> s6(std::move(s3));
-  mystl::set<int> s7;
+  MiniSTL::set<int> s1;
+  MiniSTL::set<int, MiniSTL::greater<int>> s2;
+  MiniSTL::set<int> s3(a, a + 5);
+  MiniSTL::set<int> s4(a, a + 5);
+  MiniSTL::set<int> s5(s3);
+  MiniSTL::set<int> s6(std::move(s3));
+  MiniSTL::set<int> s7;
   s7 = s4;
-  mystl::set<int> s8;
+  MiniSTL::set<int> s8;
   s8 = std::move(s4);
-  mystl::set<int> s9{ 1,2,3,4,5 };
-  mystl::set<int> s10;
+  MiniSTL::set<int> s9{ 1,2,3,4,5 };
+  MiniSTL::set<int> s10;
   s10 = { 1,2,3,4,5 };
 
   for (int i = 5; i > 0; --i)
@@ -93,18 +93,18 @@ void multiset_test()
   std::cout << "[---------------- Run container test : multiset ----------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   int a[] = { 5,4,3,2,1 };
-  mystl::multiset<int> s1;
-  mystl::multiset<int, mystl::greater<int>> s2;
-  mystl::multiset<int> s3(a, a + 5);
-  mystl::multiset<int> s4(a, a + 5);
-  mystl::multiset<int> s5(s3);
-  mystl::multiset<int> s6(std::move(s3));
-  mystl::multiset<int> s7;
+  MiniSTL::multiset<int> s1;
+  MiniSTL::multiset<int, MiniSTL::greater<int>> s2;
+  MiniSTL::multiset<int> s3(a, a + 5);
+  MiniSTL::multiset<int> s4(a, a + 5);
+  MiniSTL::multiset<int> s5(s3);
+  MiniSTL::multiset<int> s6(std::move(s3));
+  MiniSTL::multiset<int> s7;
   s7 = s4;
-  mystl::multiset<int> s8;
+  MiniSTL::multiset<int> s8;
   s8 = std::move(s4);
-  mystl::multiset<int> s9{ 1,2,3,4,5 };
-  mystl::multiset<int> s10;
+  MiniSTL::multiset<int> s9{ 1,2,3,4,5 };
+  MiniSTL::multiset<int> s10;
   s10 = { 1,2,3,4,5 };
 
   for (int i = 5; i > 0; --i)
@@ -161,6 +161,6 @@ void multiset_test()
 
 } // namespace set_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_SET_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_SET_TEST_H_
 

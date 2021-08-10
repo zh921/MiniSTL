@@ -1,15 +1,15 @@
-﻿#ifndef miniSTL_UNORDERED_SET_TEST_H_
-#define miniSTL_UNORDERED_SET_TEST_H_
+﻿#ifndef MiniSTL_UNORDERED_SET_TEST_H_
+#define MiniSTL_UNORDERED_SET_TEST_H_
 
 // unordered_set test : 测试 unordered_set, unordered_multiset 的接口与它们 insert 的性能
 
 #include <unordered_set>
 
-#include "../miniSTL/unordered_set.h"
+#include "../MiniSTL/unordered_set.h"
 #include "set_test.h"
 #include "test.h"
 
-namespace mystl
+namespace MiniSTL
 {
 namespace test
 {
@@ -22,22 +22,22 @@ void unordered_set_test()
   std::cout << "[-------------- Run container test : unordered_set -------------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   int a[] = { 5,4,3,2,1 };
-  mystl::unordered_set<int> us1;
-  mystl::unordered_set<int> us2(520);
-  mystl::unordered_set<int> us3(520, mystl::hash<int>());
-  mystl::unordered_set<int> us4(520, mystl::hash<int>(), mystl::equal_to<int>());
-  mystl::unordered_set<int> us5(a, a + 5);
-  mystl::unordered_set<int> us6(a, a + 5, 100);
-  mystl::unordered_set<int> us7(a, a + 5, 100, mystl::hash<int>());
-  mystl::unordered_set<int> us8(a, a + 5, 100, mystl::hash<int>(), mystl::equal_to<int>());
-  mystl::unordered_set<int> us9(us5);
-  mystl::unordered_set<int> us10(std::move(us5));
-  mystl::unordered_set<int> us11;
+  MiniSTL::unordered_set<int> us1;
+  MiniSTL::unordered_set<int> us2(520);
+  MiniSTL::unordered_set<int> us3(520, MiniSTL::hash<int>());
+  MiniSTL::unordered_set<int> us4(520, MiniSTL::hash<int>(), MiniSTL::equal_to<int>());
+  MiniSTL::unordered_set<int> us5(a, a + 5);
+  MiniSTL::unordered_set<int> us6(a, a + 5, 100);
+  MiniSTL::unordered_set<int> us7(a, a + 5, 100, MiniSTL::hash<int>());
+  MiniSTL::unordered_set<int> us8(a, a + 5, 100, MiniSTL::hash<int>(), MiniSTL::equal_to<int>());
+  MiniSTL::unordered_set<int> us9(us5);
+  MiniSTL::unordered_set<int> us10(std::move(us5));
+  MiniSTL::unordered_set<int> us11;
   us11 = us6;
-  mystl::unordered_set<int> us12;
+  MiniSTL::unordered_set<int> us12;
   us12 = std::move(us6);
-  mystl::unordered_set<int> us13{ 1,2,3,4,5 };
-  mystl::unordered_set<int> us14;
+  MiniSTL::unordered_set<int> us13{ 1,2,3,4,5 };
+  MiniSTL::unordered_set<int> us14;
   us13 = { 1,2,3,4,5 };
 
   FUN_AFTER(us1, us1.emplace(1));
@@ -106,22 +106,22 @@ void unordered_multiset_test()
   std::cout << "[------------ Run container test : unordered_multiset ----------]" << std::endl;
   std::cout << "[-------------------------- API test ---------------------------]" << std::endl;
   int a[] = { 5,4,3,2,1 };
-  mystl::unordered_multiset<int> us1;
-  mystl::unordered_multiset<int> us2(520);
-  mystl::unordered_multiset<int> us3(520, mystl::hash<int>());
-  mystl::unordered_multiset<int> us4(520, mystl::hash<int>(), mystl::equal_to<int>());
-  mystl::unordered_multiset<int> us5(a, a + 5);
-  mystl::unordered_multiset<int> us6(a, a + 5, 100);
-  mystl::unordered_multiset<int> us7(a, a + 5, 100, mystl::hash<int>());
-  mystl::unordered_multiset<int> us8(a, a + 5, 100, mystl::hash<int>(), mystl::equal_to<int>());
-  mystl::unordered_multiset<int> us9(us5);
-  mystl::unordered_multiset<int> us10(std::move(us5));
-  mystl::unordered_multiset<int> us11;
+  MiniSTL::unordered_multiset<int> us1;
+  MiniSTL::unordered_multiset<int> us2(520);
+  MiniSTL::unordered_multiset<int> us3(520, MiniSTL::hash<int>());
+  MiniSTL::unordered_multiset<int> us4(520, MiniSTL::hash<int>(), MiniSTL::equal_to<int>());
+  MiniSTL::unordered_multiset<int> us5(a, a + 5);
+  MiniSTL::unordered_multiset<int> us6(a, a + 5, 100);
+  MiniSTL::unordered_multiset<int> us7(a, a + 5, 100, MiniSTL::hash<int>());
+  MiniSTL::unordered_multiset<int> us8(a, a + 5, 100, MiniSTL::hash<int>(), MiniSTL::equal_to<int>());
+  MiniSTL::unordered_multiset<int> us9(us5);
+  MiniSTL::unordered_multiset<int> us10(std::move(us5));
+  MiniSTL::unordered_multiset<int> us11;
   us11 = us6;
-  mystl::unordered_multiset<int> us12;
+  MiniSTL::unordered_multiset<int> us12;
   us12 = std::move(us6);
-  mystl::unordered_multiset<int> us13{ 1,2,3,4,5 };
-  mystl::unordered_multiset<int> us14;
+  MiniSTL::unordered_multiset<int> us13{ 1,2,3,4,5 };
+  MiniSTL::unordered_multiset<int> us14;
   us14 = { 1,2,3,4,5 };
 
   FUN_AFTER(us1, us1.emplace(1));
@@ -186,6 +186,6 @@ void unordered_multiset_test()
 
 } // namespace unordered_set_test
 } // namespace test
-} // namespace mystl
-#endif // !miniSTL_UNORDERED_SET_TEST_H_
+} // namespace MiniSTL
+#endif // !MiniSTL_UNORDERED_SET_TEST_H_
 
